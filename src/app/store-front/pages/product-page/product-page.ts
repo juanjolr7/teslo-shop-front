@@ -15,6 +15,7 @@ export class ProductPage {
   idSlug = inject(ActivatedRoute).snapshot.params['idSlug'];
   productsService = inject(ProductsService);
 
+
   productResource = rxResource({
     params: () => ({ idSlug: this.idSlug }),
     stream: ({ params }) => this.productsService.getProductByIdSlug(params.idSlug),
